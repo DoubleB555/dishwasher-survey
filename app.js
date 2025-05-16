@@ -56442,10 +56442,46 @@ document.addEventListener("DOMContentLoaded", function () {
   const submitBtn = document.getElementById("submitBtn");
   if (submitBtn) {
     submitBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      console.log("ส่งข้อมูลแล้ว");
+      e.preventDefault(); // ป้องกันการ reload หน้า
+
+      // ดึงข้อมูลจากฟอร์ม
+      const data = {
+        Soldto: document.getElementById("Soldto").value,
+        Soldtopartyname: document.getElementById("Soldtopartyname").value,
+        Servicecontract: document.getElementById("Servicecontract").value,
+        ExternalReferenceNo: document.getElementById("ExternalReferenceNo").value,
+        SerialNumberofEquipment: document.getElementById("SerialNumberofEquipment").value,
+        otherReason: document.getElementById("otherReason").value,
+        MaterialDescription: document.getElementById("MaterialDescription").value,
+        OriginalContractStart: document.getElementById("OriginalContractStart").value,
+        TerritoryManagerCode: document.getElementById("TerritoryManagerCode").value,
+        TerritoryManagerFullName: document.getElementById("TerritoryManagerFullName").value,
+        Remark: document.getElementById("Remark").value,
+      };
+
+      // ส่งข้อมูลไปยัง Google Apps Script
+      fetch("https://script.google.com/macros/s/AKfycbzgWoS-1Jp3bh8WVS_4VgkXATQJSWPBdZUq0Qe1J6V9VthJKC0-nVTYfsbIqP6xsxFqaw/exec", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => res.text())
+        .then((res) => {
+          alert("ส่งข้อมูลเรียบร้อยแล้ว!");
+          document.querySelector("form").reset();
+          document.getElementById("otherTextBox").style.display = "none";
+        })
+        .catch((err) => {
+          console.error("เกิดข้อผิดพลาด:", err);
+          alert("เกิดข้อผิดพลาดในการส่งข้อมูล");
+        });
     });
+  } else {
+    console.warn("ไม่พบปุ่ม submitBtn");
   }
 });
+
 
 
