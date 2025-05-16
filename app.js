@@ -56419,7 +56419,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
     remark: document.getElementById("Remark").value,
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbzgWoS-lJp3bh8VVS_4VgkXATQJSWPBdZUg0Qg1J6V9vtWJKC0-nVTYfsbIqP6xsxfGqw/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbwaDwLWrdh_R8YoQCiE65jtgv2izbvaVIDHcxn048fSsyxtQx2ILpAEZGv2WbyoeeG_Mg/exec", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
