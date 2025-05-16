@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+    <title>Collection Dishwasher machine No.</title>
+
+
+
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Serial number Survey</h1>
+        <form action="#">
+            <!-- Q1 -->
+            <select aria-label="label for the select" name="" id="Soldto">
+                <option value="">-- Sold to --</option>
+            </select>
+            <!-- Q2 -->
+            <select aria-label="label for the select" name="" id="Soldtopartyname">
+                <option value="">-- Sold-to-party name --</option>
+            </select>
+            <!-- Q3 -->
+            <select aria-label="label for the select" name="" id="Servicecontract">
+                <option value="">-- Select Service contract --</option>
+            </select>
+            <!-- Q4 -->
+            <select aria-label="label for the select" name="" id="ExternalReferenceNo">
+                <option value="">-- External Reference No --</option>
+            </select>
+            <!-- Q5 -->
+            <select id="SerialNumberofEquipment" onchange="otherTextBox()">
+                <option value="">-- Serial Number of Equipment --</option>
+                <option value="other">other</option>
+            </select>
+
+            <div id="otherTextBox" style="display: none; margin-top: 10px;">
+                <label for="otherReason">Please provide additional information:</label>
+                <input type="text" id="otherReason" placeholder="Enter text here...">
+            </div>
+
+            <!-- Q7 -->
+            <select aria-label="label for the select" name="" id="MaterialDescription">
+                <option value="">-- Material Description --</option>
+            </select>
+            <!-- Q8 -->
+            <select aria-label="label for the select" name="" id="OriginalContractStart">
+                <option value="">-- Original Contract Start --</option>
+            </select>
+            <!-- Q9 -->
+            <select aria-label="label for the select" name="" id="TerritoryManagerCode">
+                <option value="">-- Territory Manager Code --</option>
+            </select>
+            <!-- Q10 -->
+            <select aria-label="label for the select" name="" id="TerritoryManagerFullName">
+                <option value="">-- Territory Manager Full Name --</option>
+            </select>
+            <!-- Q11 -->
+            <h2>Remark</h2>
+            <input type="text" id="Remark">
+            <br>
+            <input type="submit">
+        </form>
+    </div>
+    <script>
+        function otherTextBox() {
+            const selected = document.getElementById("SerialNumberofEquipment").value;
+            const textbox = document.getElementById("otherTextBox");
+            textbox.style.display = selected === "other" ? "block" : "none";
+        }
+    </script>
+</body>
+
+</html>
