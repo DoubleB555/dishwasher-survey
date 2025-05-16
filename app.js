@@ -56460,7 +56460,7 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       // ส่งข้อมูลไปยัง Google Apps Script
-      fetch("https://script.google.com/macros/s/AKfycbwETAT4NCMRb2S-C9giNQybW_RS1VtROd2GLDrAO84GskckUVS0H1lYD9B1RM4zD_cOAQ/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbwaDwLWrdh_R8YoQCiE65jtgv2izbvaVIDHcxn048fSsyxtQx2ILpAEZGv2WbyoeeG_Mg/exec", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
