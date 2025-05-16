@@ -56400,15 +56400,7 @@ window.onload = function () {
         }
     }
 }
-document.addEventListener("DOMContentLoaded", function () {
-  const submitBtn = document.getElementById("submitBtn");
-  if (submitBtn) {
-    submitBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      console.log("ส่งข้อมูลแล้ว");
-    });
-  }
-});
+
 
 document.querySelector("form").addEventListener("submit", function (e) {
   e.preventDefault();
@@ -56444,6 +56436,16 @@ document.querySelector("form").addEventListener("submit", function (e) {
       console.error("เกิดข้อผิดพลาด:", err);
       alert("เกิดข้อผิดพลาดในการส่งข้อมูล");
     });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const submitBtn = document.getElementById("submitBtn");
+  if (submitBtn) {
+    submitBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      console.log("ส่งข้อมูลแล้ว");
+    });
+  }
 });
 
 
