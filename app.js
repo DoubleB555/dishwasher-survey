@@ -56417,7 +56417,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
     remark: document.getElementById("Remark").value,
   };
 
-  fetch("https://script.google.com/macros/s/PASTE_YOUR_SCRIPT_URL_HERE/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzgWoS-lJp3bh8VVS_4VgkXATQJSWPBdZUg0Qg1J6V9vtWJKC0-nVTYfsbIqP6xsxfGqw/exec", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
