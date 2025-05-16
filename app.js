@@ -56400,3 +56400,39 @@ window.onload = function () {
         }
     }
 }
+document.querySelector("form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const data = {
+    soldTo: document.getElementById("Soldto").value,
+    soldToPartyName: document.getElementById("Soldtopartyname").value,
+    serviceContract: document.getElementById("Servicecontract").value,
+    externalRefNo: document.getElementById("ExternalReferenceNo").value,
+    serialNumber: document.getElementById("SerialNumberofEquipment").value,
+    otherReason: document.getElementById("otherReason").value,
+    materialDescription: document.getElementById("MaterialDescription").value,
+    contractStart: document.getElementById("OriginalContractStart").value,
+    managerCode: document.getElementById("TerritoryManagerCode").value,
+    managerName: document.getElementById("TerritoryManagerFullName").value,
+    remark: document.getElementById("Remark").value,
+  };
+
+  fetch("https://script.google.com/macros/s/PASTE_YOUR_SCRIPT_URL_HERE/exec", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.text())
+    .then((res) => {
+      alert("ส่งข้อมูลเรียบร้อยแล้ว!");
+      document.querySelector("form").reset();
+      document.getElementById("otherTextBox").style.display = "none";
+    })
+    .catch((err) => {
+      console.error("เกิดข้อผิดพลาด:", err);
+      alert("เกิดข้อผิดพลาดในการส่งข้อมูล");
+    });
+});
+
