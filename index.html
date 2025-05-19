@@ -76,7 +76,7 @@
     </script>
     
     <script src="app.js"></script>
-    <script src="dynamic-dropdown.js"></script>
+    
     <script>
 document.addEventListener("DOMContentLoaded", function () {
   try {
@@ -176,6 +176,42 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+<script>
+document.getElementById("submitBtn").addEventListener("click", function (e) {
+  e.preventDefault(); // ป้องกันการ reload หน้า
+
+  const data = {
+    Soldto: document.getElementById("Soldto").value,
+    Soldtopartyname: document.getElementById("Soldtopartyname").value,
+    Servicecontract: document.getElementById("Servicecontract").value,
+    ExternalReferenceNo: document.getElementById("ExternalReferenceNo").value,
+    SerialNumberofEquipment: document.getElementById("SerialNumberofEquipment").value,
+    otherReason: document.getElementById("otherReason").value,
+    MaterialDescription: document.getElementById("MaterialDescription").value,
+    OriginalContractStart: document.getElementById("OriginalContractStart").value,
+    TerritoryManagerCode: document.getElementById("TerritoryManagerCode").value,
+    TerritoryManagerFullName: document.getElementById("TerritoryManagerFullName").value,
+    Remark: document.getElementById("Remark").value
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbxS5bE4aQGLvd3olGytNnHoE3nbCWibaxNbsrQHHvH0tPM8E5BFzSgeV7O0kg0kAElb/exec", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+    .then(response => response.json())
+    .then(result => {
+      alert("ส่งข้อมูลสำเร็จ: " + result.status);
+    })
+    .catch(error => {
+      console.error("เกิดข้อผิดพลาด:", error);
+      alert("ไม่สามารถส่งข้อมูลได้ กรุณาลองใหม่");
+    });
+});
+</script>
+
 
 </body>
 
