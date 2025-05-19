@@ -56419,7 +56419,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
     remark: document.getElementById("Remark").value,
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbwaDwLWrdh_R8YoQCiE65jtgv2izbvaVIDHcxn048fSsyxtQx2ILpAEZGv2WbyoeeG_Mg/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbxS5bE4aQGLvd3olGytNnHoE3nbCWibaxNbsrQHHvH0tPM8E5BFzSgeV7O0kg0kAElb/exec", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
@@ -56460,7 +56460,7 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       // ส่งข้อมูลไปยัง Google Apps Script
-      fetch("https://script.google.com/macros/s/AKfycbwaDwLWrdh_R8YoQCiE65jtgv2izbvaVIDHcxn048fSsyxtQx2ILpAEZGv2WbyoeeG_Mg/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbxS5bE4aQGLvd3olGytNnHoE3nbCWibaxNbsrQHHvH0tPM8E5BFzSgeV7O0kg0kAElb/exec", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
